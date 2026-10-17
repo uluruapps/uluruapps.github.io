@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dachwerk – Rafter &amp; Roof Framing Calculator for Android</title>
+<meta name="description" content="Dachwerk works out roof framing from a few measurements: every rafter with its length and cuts, the cut list for the saw and the quote for the customer. Offline, no account, free with an optional one-time Pro purchase.">
+<link rel="canonical" href="__SITE_URL__/">
+<link rel="alternate" hreflang="en" href="__SITE_URL__/">
+<link rel="alternate" hreflang="de" href="__SITE_URL__/de/">
+<link rel="alternate" hreflang="x-default" href="__SITE_URL__/">
+<link rel="alternate" type="text/markdown" title="LLM summary" href="llms.txt">
+<meta name="theme-color" content="#15171C">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/space_grotesk.ttf" as="font" type="font/ttf" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dachwerk">
+<meta property="og:title" content="Dachwerk – Enter the roof. Get the cut list and the quote.">
+<meta property="og:description" content="Roof framing calculator for Android: rafters, hip and jack rafters, cuts, cut list, timber order and quote. Works offline.">
+<meta property="og:url" content="__SITE_URL__/">
+<meta property="og:image" content="__SITE_URL__/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "__SITE_URL__/#org",
+      "name": "Uluru Apps",
+      "url": "__SITE_URL__/",
+      "logo": "__SITE_URL__/icon-512.png",
+      "email": "uluruapps+dachwerk@gmail.com",
+      "address": { "@type": "PostalAddress", "addressCountry": "AT" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "__SITE_URL__/#website",
+      "url": "__SITE_URL__/",
+      "name": "Dachwerk",
+      "inLanguage": ["en", "de"],
+      "publisher": { "@id": "__SITE_URL__/#org" }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "__SITE_URL__/#app",
+      "name": "Dachwerk",
+      "alternateName": ["Rafter Calculator · Dachwerk", "Dachstuhl berechnen · Dachwerk", "Dachwerk Rafter Calculator"],
+      "description": "Roof framing calculator for Android. From a few measurements it works out every rafter (common, hip, valley, jack and upper rafters) with its length and cuts (plumb, seat, cheek, birdsmouth), the pitch, rise, run and roof area, a numbered cut list, a timber order packed onto stock lengths, and a quote and invoice as PDF on the user's own letterhead. Works fully offline, with no account, no ads and no tracking.",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Construction calculator",
+      "operatingSystem": "Android 8.0 or later",
+      "url": "__SITE_URL__/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.uluruapps.dachwerk",
+      "installUrl": "https://play.google.com/store/apps/details?id=com.uluruapps.dachwerk",
+      "image": "__SITE_URL__/img/og.png",
+      "screenshot": ["__SITE_URL__/img/en-1-calculator.webp", "__SITE_URL__/img/en-3-quote.webp", "__SITE_URL__/img/en-4-cut-list.webp"],
+      "softwareVersion": "1.3",
+      "inLanguage": ["en", "de", "fr", "it", "es", "pt", "nl", "pl", "cs", "sk", "sl", "hr", "hu", "ro", "bg", "el", "tr", "ru", "uk", "da", "sv", "no", "fi", "et", "lv", "lt", "ca"],
+      "audience": { "@type": "BusinessAudience", "audienceType": "Carpenters, roofers, timber framers and builders" },
+      "featureList": [
+        "Gable, mono, hip, half-hip, hip-and-valley, gambrel and mansard roofs",
+        "Common, hip, valley, jack and upper rafter lengths",
+        "Plumb cut, seat cut, cheek cut and birdsmouth depth",
+        "Pitch, rise, run and roof area; lengths of eaves, verges, ridges, hips and valleys",
+        "3D, plan and section drawings to scale",
+        "Numbered cut list with every jack rafter at its own length",
+        "Timber order packed onto stock lengths with saw kerf and offcut",
+        "Cutting plan to tick off at the saw",
+        "Quote and invoice PDF with own letterhead, logo, price book, labour, waste and VAT",
+        "Works offline; no account, no ads, no tracking",
+        "Metric and imperial; pitch in degrees, percent or rise-in-run",
+        "27 languages"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "description": "Free with no limit on calculations, drawings, cut lists and letterhead. Optional one-time Pro purchase (not a subscription) removes the 'Created with Dachwerk' line from quotes and invoices from the fourth roof on."
+      },
+      "publisher": { "@id": "__SITE_URL__/#org" },
+      "author": { "@id": "__SITE_URL__/#org" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "__SITE_URL__/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is Dachwerk?", "acceptedAnswer": { "@type": "Answer", "text": "Dachwerk is a roof framing and rafter calculator app for Android. From a few measurements it works out every rafter with its length and cuts, draws the roof to scale, writes the cut list and timber order, and produces a quote and invoice for the customer. It is made for carpenters, roofers, timber framers and builders." } },
+        { "@type": "Question", "name": "Which roof shapes can Dachwerk calculate?", "acceptedAnswer": { "@type": "Answer", "text": "Gable, mono-pitch (lean-to), hip, half-hip (jerkinhead), hip-and-valley (L-shaped), gambrel and mansard roofs." } },
+        { "@type": "Question", "name": "Does Dachwerk calculate hip and jack rafters?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It calculates common, hip, valley, jack and upper rafters. Every jack rafter is listed at its own length rather than as a range, with the plumb cut, seat cut, cheek cut and birdsmouth depth." } },
+        { "@type": "Question", "name": "Does Dachwerk work offline?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Everything works without signal: the calculator, the drawings, the cut lists and the PDFs. The app needs a connection only to complete an optional purchase through Google Play." } },
+        { "@type": "Question", "name": "Is Dachwerk free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The calculator, drawings, cut list, timber order and your letterhead are free with no limit. On the first three roofs, quotes also go out the way Pro sends them. From the fourth roof, quotes and invoices carry a short 'Created with Dachwerk' line until Pro is unlocked. Pro is a single one-time purchase, not a subscription." } },
+        { "@type": "Question", "name": "Can I write quotes and invoices with Dachwerk?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Timber, waste, labour and VAT are priced straight from the roof, on your own letterhead with your logo. Add your own items from a price book. The invoice takes the customer and items over from the quote. Both are sent as PDF by email or messenger, or printed." } },
+        { "@type": "Question", "name": "Does Dachwerk upload my data?", "acceptedAnswer": { "@type": "Answer", "text": "No. There is no account, no ads, no analytics and no tracking. Projects, customers and business details stay on the phone." } },
+        { "@type": "Question", "name": "Is Dachwerk available for iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Not at the moment. Dachwerk is available for Android phones and tablets (Android 8.0 or later) on Google Play." } },
+        { "@type": "Question", "name": "Does Dachwerk replace a structural engineer?", "acceptedAnswer": { "@type": "Answer", "text": "No. Dachwerk does geometry and planning, not structural engineering. Check the results against local building codes, structural requirements and manufacturer specifications." } },
+        { "@type": "Question", "name": "Which units and languages does Dachwerk support?", "acceptedAnswer": { "@type": "Answer", "text": "Metric and imperial units, with pitch in degrees, percent or rise-in-run. The app is available in 27 languages, including English, German, French, Italian, Spanish, Polish and Dutch." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Dachwerk home"><img src="icon.svg" alt="" width="34" height="34">Dachwerk</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="lang" href="de/" hreflang="de" lang="de">Deutsch</a>
+    <a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.uluruapps.dachwerk&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dheader">Get <span class="long">the app</span></a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Roof framing calculator for Android</p>
+      <h1>Enter the roof.<br><span class="grad">Get the cut list and the quote.</span></h1>
+      <p class="lead">Dachwerk works out the roof framing from a few measurements: every rafter with its length and cuts, the cut list for the saw and the quote for the customer. Right on site, with no signal.</p>
+      <div class="ctas">
+        <a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.uluruapps.dachwerk&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dhero">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.6 2.3a1.5 1.5 0 0 0-.6 1.2v17a1.5 1.5 0 0 0 .6 1.2l9.3-9.7zm10.7 8.3 2.6-2.7L6.9 1.6zm0 2.8-8.4 8.9 11-6.3zm3.9-4.7-2.9 3.2 2.9 3.2 3.1-1.8a1.6 1.6 0 0 0 0-2.8z"/></svg>
+          Get it on Google Play
+        </a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
+      </div>
+      <ul class="chips">
+        <li>Free to use</li>
+        <li>Works offline</li>
+        <li>No account, no ads</li>
+        <li>27 languages</li>
+      </ul>
+    </div>
+    <div class="stage">
+      <svg class="roof" viewBox="-228 -92 560 442" role="img" aria-label="Isometric drawing of a hipped roof, 12 by 8 metres at 35 degrees, with common rafters, hip rafters and jack rafters">
+<defs><linearGradient id="faceA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7EA2FF" stop-opacity=".22"/><stop offset="1" stop-color="#7EA2FF" stop-opacity=".04"/></linearGradient><linearGradient id="faceB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD028" stop-opacity=".16"/><stop offset="1" stop-color="#FFD028" stop-opacity=".02"/></linearGradient></defs>
+<polygon class="face face-a" points="-207.8,48.0 103.9,228.0 103.9,24.0 0.0,-36.0"/>
+<polygon class="face face-b" points="311.8,108.0 103.9,228.0 103.9,24.0"/>
+<polygon class="wallface wf-a" points="-207.8,120.0 103.9,300.0 103.9,228.0 -207.8,48.0"/>
+<polygon class="wallface wf-b" points="311.8,180.0 103.9,300.0 103.9,228.0 311.8,108.0"/>
+<line class="ground" style="--o:0.00" x1="0.0" y1="0.0" x2="311.8" y2="180.0" pathLength="1"/>
+<line class="ground" style="--o:0.00" x1="311.8" y1="180.0" x2="103.9" y2="300.0" pathLength="1"/>
+<line class="ground" style="--o:0.00" x1="103.9" y1="300.0" x2="-207.8" y2="120.0" pathLength="1"/>
+<line class="ground" style="--o:0.00" x1="-207.8" y1="120.0" x2="0.0" y2="0.0" pathLength="1"/>
+<line class="wall" style="--o:1.00" x1="0.0" y1="0.0" x2="0.0" y2="-72.0" pathLength="1"/>
+<line class="wall" style="--o:1.00" x1="311.8" y1="180.0" x2="311.8" y2="108.0" pathLength="1"/>
+<line class="wall" style="--o:1.00" x1="103.9" y1="300.0" x2="103.9" y2="228.0" pathLength="1"/>
+<line class="wall" style="--o:1.00" x1="-207.8" y1="120.0" x2="-207.8" y2="48.0" pathLength="1"/>
+<line class="plate" style="--o:2.00" x1="0.0" y1="-72.0" x2="311.8" y2="108.0" pathLength="1"/>
+<line class="plate" style="--o:2.00" x1="311.8" y1="108.0" x2="103.9" y2="228.0" pathLength="1"/>
+<line class="plate" style="--o:2.00" x1="103.9" y1="228.0" x2="-207.8" y2="48.0" pathLength="1"/>
+<line class="plate" style="--o:2.00" x1="-207.8" y1="48.0" x2="0.0" y2="-72.0" pathLength="1"/>
+<line class="ridge" style="--o:3.00" x1="0.0" y1="-36.0" x2="103.9" y2="24.0" pathLength="1"/>
+<line class="hip" style="--o:3.00" x1="0.0" y1="-72.0" x2="0.0" y2="-36.0" pathLength="1"/>
+<line class="hip" style="--o:3.00" x1="-207.8" y1="48.0" x2="0.0" y2="-36.0" pathLength="1"/>
+<line class="hip" style="--o:3.00" x1="311.8" y1="108.0" x2="103.9" y2="24.0" pathLength="1"/>
+<line class="hip" style="--o:3.00" x1="103.9" y1="228.0" x2="103.9" y2="24.0" pathLength="1"/>
+<line class="jack back" style="--o:4.00" x1="7.8" y1="-67.5" x2="0.0" y2="-69.3" pathLength="1"/>
+<line class="jack" style="--o:4.25" x1="-200.1" y1="52.5" x2="-192.3" y2="41.7" pathLength="1"/>
+<line class="jack back" style="--o:4.50" x1="23.4" y1="-58.5" x2="0.0" y2="-63.9" pathLength="1"/>
+<line class="jack" style="--o:4.75" x1="-184.5" y1="61.5" x2="-161.1" y2="29.1" pathLength="1"/>
+<line class="jack back" style="--o:5.00" x1="39.0" y1="-49.5" x2="0.0" y2="-58.5" pathLength="1"/>
+<line class="jack" style="--o:5.25" x1="-168.9" y1="70.5" x2="-129.9" y2="16.5" pathLength="1"/>
+<line class="jack back" style="--o:5.50" x1="54.6" y1="-40.5" x2="0.0" y2="-53.1" pathLength="1"/>
+<line class="jack" style="--o:5.75" x1="-153.3" y1="79.5" x2="-98.7" y2="3.9" pathLength="1"/>
+<line class="jack back" style="--o:6.00" x1="70.1" y1="-31.5" x2="0.0" y2="-47.7" pathLength="1"/>
+<line class="jack" style="--o:6.25" x1="-137.7" y1="88.5" x2="-67.5" y2="-8.7" pathLength="1"/>
+<line class="jack back" style="--o:6.50" x1="85.7" y1="-22.5" x2="0.0" y2="-42.3" pathLength="1"/>
+<line class="jack" style="--o:6.75" x1="-122.1" y1="97.5" x2="-36.4" y2="-21.3" pathLength="1"/>
+<line class="jack back" style="--o:7.00" x1="101.3" y1="-13.5" x2="0.0" y2="-36.9" pathLength="1"/>
+<line class="jack" style="--o:7.25" x1="-106.5" y1="106.5" x2="-5.2" y2="-33.9" pathLength="1"/>
+<line class="common back" style="--o:7.50" x1="116.9" y1="-4.5" x2="13.0" y2="-28.5" pathLength="1"/>
+<line class="common" style="--o:7.75" x1="-90.9" y1="115.5" x2="13.0" y2="-28.5" pathLength="1"/>
+<line class="common back" style="--o:8.00" x1="132.5" y1="4.5" x2="28.6" y2="-19.5" pathLength="1"/>
+<line class="common" style="--o:8.25" x1="-75.3" y1="124.5" x2="28.6" y2="-19.5" pathLength="1"/>
+<line class="common back" style="--o:8.50" x1="148.1" y1="13.5" x2="44.2" y2="-10.5" pathLength="1"/>
+<line class="common" style="--o:8.75" x1="-59.8" y1="133.5" x2="44.2" y2="-10.5" pathLength="1"/>
+<line class="common back" style="--o:9.00" x1="163.7" y1="22.5" x2="59.8" y2="-1.5" pathLength="1"/>
+<line class="common" style="--o:9.25" x1="-44.2" y1="142.5" x2="59.8" y2="-1.5" pathLength="1"/>
+<line class="common back" style="--o:9.50" x1="179.3" y1="31.5" x2="75.3" y2="7.5" pathLength="1"/>
+<line class="common" style="--o:9.75" x1="-28.6" y1="151.5" x2="75.3" y2="7.5" pathLength="1"/>
+<line class="common back" style="--o:10.00" x1="194.9" y1="40.5" x2="90.9" y2="16.5" pathLength="1"/>
+<line class="common" style="--o:10.25" x1="-13.0" y1="160.5" x2="90.9" y2="16.5" pathLength="1"/>
+<line class="jack back" style="--o:10.50" x1="210.4" y1="49.5" x2="109.1" y2="26.1" pathLength="1"/>
+<line class="jack" style="--o:10.75" x1="2.6" y1="169.5" x2="103.9" y2="29.1" pathLength="1"/>
+<line class="jack back" style="--o:11.00" x1="226.0" y1="58.5" x2="140.3" y2="38.7" pathLength="1"/>
+<line class="jack" style="--o:11.25" x1="18.2" y1="178.5" x2="103.9" y2="59.7" pathLength="1"/>
+<line class="jack back" style="--o:11.50" x1="241.6" y1="67.5" x2="171.5" y2="51.3" pathLength="1"/>
+<line class="jack" style="--o:11.75" x1="33.8" y1="187.5" x2="103.9" y2="90.3" pathLength="1"/>
+<line class="jack back" style="--o:12.00" x1="257.2" y1="76.5" x2="202.6" y2="63.9" pathLength="1"/>
+<line class="jack" style="--o:12.25" x1="49.4" y1="196.5" x2="103.9" y2="120.9" pathLength="1"/>
+<line class="jack back" style="--o:12.50" x1="272.8" y1="85.5" x2="233.8" y2="76.5" pathLength="1"/>
+<line class="jack" style="--o:12.75" x1="65.0" y1="205.5" x2="103.9" y2="151.5" pathLength="1"/>
+<line class="jack back" style="--o:13.00" x1="288.4" y1="94.5" x2="265.0" y2="89.1" pathLength="1"/>
+<line class="jack" style="--o:13.25" x1="80.5" y1="214.5" x2="103.9" y2="182.1" pathLength="1"/>
+<line class="jack back" style="--o:13.50" x1="304.0" y1="103.5" x2="296.2" y2="101.7" pathLength="1"/>
+<line class="jack" style="--o:13.75" x1="96.1" y1="223.5" x2="103.9" y2="212.7" pathLength="1"/>
+<line class="jack back" style="--o:14.00" x1="-7.8" y1="-67.5" x2="0.0" y2="-69.3" pathLength="1"/>
+<line class="jack" style="--o:14.25" x1="304.0" y1="112.5" x2="296.2" y2="101.7" pathLength="1"/>
+<line class="jack back" style="--o:14.50" x1="-23.4" y1="-58.5" x2="0.0" y2="-63.9" pathLength="1"/>
+<line class="jack" style="--o:14.75" x1="288.4" y1="121.5" x2="265.0" y2="89.1" pathLength="1"/>
+<line class="jack back" style="--o:15.00" x1="-39.0" y1="-49.5" x2="0.0" y2="-58.5" pathLength="1"/>
+<line class="jack" style="--o:15.25" x1="272.8" y1="130.5" x2="233.8" y2="76.5" pathLength="1"/>
+<line class="jack back" style="--o:15.50" x1="-54.6" y1="-40.5" x2="0.0" y2="-53.1" pathLength="1"/>
+<line class="jack" style="--o:15.75" x1="257.2" y1="139.5" x2="202.6" y2="63.9" pathLength="1"/>
+<line class="jack back" style="--o:16.00" x1="-70.1" y1="-31.5" x2="0.0" y2="-47.7" pathLength="1"/>
+<line class="jack" style="--o:16.25" x1="241.6" y1="148.5" x2="171.5" y2="51.3" pathLength="1"/>
+<line class="jack back" style="--o:16.50" x1="-85.7" y1="-22.5" x2="0.0" y2="-42.3" pathLength="1"/>
+<line class="jack" style="--o:16.75" x1="226.0" y1="157.5" x2="140.3" y2="38.7" pathLength="1"/>
+<line class="common back" style="--o:17.00" x1="-101.3" y1="-13.5" x2="2.6" y2="-37.5" pathLength="1"/>
+<line class="common" style="--o:17.25" x1="210.4" y1="166.5" x2="106.5" y2="22.5" pathLength="1"/>
+<line class="jack back" style="--o:17.50" x1="-116.9" y1="-4.5" x2="-26.0" y2="-25.5" pathLength="1"/>
+<line class="jack" style="--o:17.75" x1="194.9" y1="175.5" x2="103.9" y2="49.5" pathLength="1"/>
+<line class="jack back" style="--o:18.00" x1="-132.5" y1="4.5" x2="-57.2" y2="-12.9" pathLength="1"/>
+<line class="jack" style="--o:18.25" x1="179.3" y1="184.5" x2="103.9" y2="80.1" pathLength="1"/>
+<line class="jack back" style="--o:18.50" x1="-148.1" y1="13.5" x2="-88.3" y2="-0.3" pathLength="1"/>
+<line class="jack" style="--o:18.75" x1="163.7" y1="193.5" x2="103.9" y2="110.7" pathLength="1"/>
+<line class="jack back" style="--o:19.00" x1="-163.7" y1="22.5" x2="-119.5" y2="12.3" pathLength="1"/>
+<line class="jack" style="--o:19.25" x1="148.1" y1="202.5" x2="103.9" y2="141.3" pathLength="1"/>
+<line class="jack back" style="--o:19.50" x1="-179.3" y1="31.5" x2="-150.7" y2="24.9" pathLength="1"/>
+<line class="jack" style="--o:19.75" x1="132.5" y1="211.5" x2="103.9" y2="171.9" pathLength="1"/>
+<line class="jack back" style="--o:20.00" x1="-194.9" y1="40.5" x2="-181.9" y2="37.5" pathLength="1"/>
+<line class="jack" style="--o:20.25" x1="116.9" y1="220.5" x2="103.9" y2="202.5" pathLength="1"/>
+<text class="dim" x="-60.0" y="240.0" transform="rotate(30 -60.0 240.0)" text-anchor="middle">12.00 m</text>
+<text class="dim" x="221.8" y="266.0" transform="rotate(-30 221.8 266.0)" text-anchor="middle">8.00 m</text>
+</svg>
+      <div class="legend" aria-hidden="true"><span><i style="background:var(--common)"></i>Common</span><span><i style="background:var(--hip)"></i>Hip</span><span><i style="background:var(--jack)"></i>Jack</span></div>
+      <div class="readout" aria-hidden="true">
+        <small>Common rafter</small>
+        <strong>5.46 m</strong>
+        <span>×18 · plumb 35.0° · seat 55.0°</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="kicker">From tape measure to saw</p>
+      <h2>Three screens between the measurements and the finished roof.</h2>
+      <p>Pick the roof shape, type in the building. Dachwerk draws it to scale and recalculates every piece the moment a measurement changes.</p>
+    </div>
+    <div class="phones">
+      <article class="phone reveal">
+        <figure>
+          <div class="device"><img src="img/en-1-calculator.webp" width="540" height="1200" alt="Dachwerk calculator: a hipped roof 12 by 8 metres in 3D, common rafter 5.46 metres" loading="lazy"></div>
+          <figcaption><span class="step">1</span><h3>Set out the roof</h3><p>Seven roof shapes, from mono to mansard. Tap a rafter on the drawing for its length and cuts.</p></figcaption>
+        </figure>
+      </article>
+      <article class="phone reveal" style="--d:.12s">
+        <figure>
+          <div class="device"><img src="img/en-4-cut-list.webp" width="540" height="1200" alt="Dachwerk cut list with every piece numbered and the timber order by section size" loading="lazy"></div>
+          <figcaption><span class="step">2</span><h3>Cut it</h3><p>Every piece numbered, every jack rafter at its own length, and the timber order by section size.</p></figcaption>
+        </figure>
+      </article>
+      <article class="phone reveal" style="--d:.24s">
+        <figure>
+          <div class="device"><img src="img/en-3-quote.webp" width="540" height="1200" alt="Dachwerk quote with timber, labour, VAT and a drawing of the roof" loading="lazy"></div>
+          <figcaption><span class="step">3</span><h3>Quote it</h3><p>Your letterhead and prices, and a drawing of the roof the customer can actually read.</p></figcaption>
+        </figure>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="features" style="padding-top:60px">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="kicker">What it calculates</p>
+      <h2>Everything a rafter table leaves to you.</h2>
+    </div>
+    <div class="bento">
+      <article class="tile wide dark reveal">
+        <h3>Seven roof shapes</h3>
+        <p>Common, hip, valley, jack and upper rafters, with pitch, rise, run, roof area and the lengths of eaves, verges, ridges, hips and valleys.</p>
+        <ul class="shapes"><li>Hip</li><li>Gable</li><li>Half-hip</li><li>Mono</li><li>Hip &amp; valley</li><li>Gambrel</li><li>Mansard</li></ul>
+      </article>
+      <article class="tile reveal" style="--d:.1s">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20 20 4M4 20h10M4 20V10"/></svg></div>
+        <h3>Every cut, to scale</h3>
+        <p>Plumb cut, seat cut, cheek cut and birdsmouth depth, with the numbers right on the drawing.</p>
+      </article>
+      <article class="tile half reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 7h18M3 12h12M3 17h7"/></svg></div>
+        <h3>Timber order that fits the merchant</h3>
+        <p>The pieces are packed onto the stock lengths your merchant sells, with the saw kerf counted and the offcut shown.</p>
+        <div class="tile-img"><img src="img/en-5-cutting-plan.webp" width="540" height="1200" alt="Cutting plan showing which piece comes off which board" loading="lazy"></div>
+      </article>
+      <article class="tile half reveal" style="--d:.1s">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M8 14h8M8 18h5"/></svg></div>
+        <h3>Quote and invoice</h3>
+        <p>Timber, waste, labour and VAT on your own letterhead, straight from the roof. Add items from your price book; the invoice takes everything over from the quote.</p>
+        <div class="tile-img"><img src="img/en-6-projects.webp" width="540" height="1200" alt="Projects list showing each job as draft, sent, accepted or done" loading="lazy"></div>
+      </article>
+      <article class="tile reveal">
+        <p class="big grad">0 bars</p>
+        <h3>Works with no signal</h3>
+        <p>In the loft, on the scaffold, in flight mode. Nothing waits for a server.</p>
+      </article>
+      <article class="tile reveal" style="--d:.1s">
+        <p class="big grad">0 trackers</p>
+        <h3>Your data stays yours</h3>
+        <p>No account, no ads, no analytics. Projects and customers live on your phone and nowhere else.</p>
+      </article>
+      <article class="tile reveal" style="--d:.2s">
+        <p class="big grad">27</p>
+        <h3>Languages</h3>
+        <p>Metric or imperial. Pitch in degrees, percent or rise-in-run.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="kicker">More than a rafter table</p>
+      <h2>A table gives you a length per metre. Dachwerk gives you the roof.</h2>
+    </div>
+    <div class="compare">
+      <div class="col reveal">
+        <h3>Rafter table</h3>
+        <ul>
+          <li>One length per metre of run</li>
+          <li>Jack rafters worked out by hand, one by one</li>
+          <li>Cut angles looked up separately</li>
+          <li>Timber order added up on paper</li>
+          <li>Start again when a measurement changes</li>
+        </ul>
+      </div>
+      <div class="col yes reveal" style="--d:.12s">
+        <h3>Dachwerk</h3>
+        <ul>
+          <li>The common rafter at its full length</li>
+          <li>Every jack rafter at its own length</li>
+          <li>The cut angles, pitch and roof area</li>
+          <li>The timber order on stock lengths</li>
+          <li>Everything recalculated the moment a measurement changes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" style="padding-top:0">
+  <div class="wrap">
+    <div class="head center reveal">
+      <p class="kicker">Pricing</p>
+      <h2>Free to use. Pro is one purchase.</h2>
+      <p>No subscription. No trial that runs out.</p>
+    </div>
+    <div class="pricing">
+      <div class="plan reveal">
+        <h3>Free</h3>
+        <p class="price">€0</p>
+        <p class="note">With no limit, on every roof.</p>
+        <ul>
+          <li>The calculator and all seven roof shapes</li>
+          <li>3D, plan and section drawings</li>
+          <li>Cut list, timber order and cutting plan, also as PDF</li>
+          <li>Your letterhead and logo on every document</li>
+          <li>Your first three roofs' quotes go out exactly as Pro sends them</li>
+        </ul>
+      </div>
+      <div class="plan pro reveal" style="--d:.12s">
+        <span class="badge">One purchase</span>
+        <h3>Pro</h3>
+        <p class="price">Once</p>
+        <p class="note">The price is shown in Google Play, in your currency.</p>
+        <ul>
+          <li>Quotes with no Dachwerk line on them</li>
+          <li>Your roof drawn on every quote</li>
+          <li>Price book lines counted from the roof</li>
+          <li>Unlimited roofs, not three</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">From the fourth roof on, free quotes and invoices still go out – with a short “Created with Dachwerk” line at the foot.</p>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="head center reveal">
+      <p class="kicker">Questions</p>
+      <h2>Asked on site</h2>
+    </div>
+    <div class="faq">
+      <details><summary>What is Dachwerk?</summary><div><p>Dachwerk is a roof framing and rafter calculator app for Android. From a few measurements it works out every rafter with its length and cuts, draws the roof to scale, writes the cut list and timber order, and produces a quote and invoice for the customer. It is made for carpenters, roofers, timber framers and builders.</p></div></details>
+      <details><summary>Which roof shapes can it calculate?</summary><div><p>Gable, mono-pitch (lean-to), hip, half-hip (jerkinhead), hip-and-valley (L-shaped), gambrel and mansard roofs.</p></div></details>
+      <details><summary>Does it calculate hip and jack rafters?</summary><div><p>Yes: common, hip, valley, jack and upper rafters. Every jack rafter is listed at its own length rather than as a range, with the plumb cut, seat cut, cheek cut and birdsmouth depth.</p></div></details>
+      <details><summary>Does it work offline?</summary><div><p>Yes. The calculator, the drawings, the cut lists and the PDFs all work without signal. A connection is needed only to complete an optional purchase through Google Play.</p></div></details>
+      <details><summary>Is it really free?</summary><div><p>The calculator, drawings, cut list, timber order and your letterhead are free with no limit. On your first three roofs, quotes also go out the way Pro sends them. From the fourth roof, quotes and invoices carry a short “Created with Dachwerk” line until you unlock Pro.</p><p>Pro is one purchase. Not a subscription.</p></div></details>
+      <details><summary>Can I write quotes and invoices with it?</summary><div><p>Yes. Timber, waste, labour and VAT are priced straight from the roof, on your own letterhead with your logo. Add your own items from a price book. The invoice takes the customer and items over from the quote. Send either as a PDF by email or messenger, or print it.</p></div></details>
+      <details><summary>Does Dachwerk upload my data?</summary><div><p>No. There is no account, no ads, no analytics and no tracking. Your projects, customers and business details stay on your phone. <a href="https://uluruapps.github.io/dachwerk-privacy/">Read the privacy policy</a>.</p></div></details>
+      <details><summary>Is there an iPhone version?</summary><div><p>Not at the moment. Dachwerk runs on Android phones and tablets with Android 8.0 or later.</p></div></details>
+      <details><summary>Does it replace a structural engineer?</summary><div><p>No. Dachwerk does geometry and planning, not structural engineering. Check the results against local building codes, structural requirements and manufacturer specifications.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <h2 class="reveal">The next roof, worked out before you climb down.</h2>
+    <p class="reveal">Free on Google Play for Android phones and tablets.</p>
+    <div class="ctas reveal">
+      <a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.uluruapps.dachwerk&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dfooter">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.6 2.3a1.5 1.5 0 0 0-.6 1.2v17a1.5 1.5 0 0 0 .6 1.2l9.3-9.7zm10.7 8.3 2.6-2.7L6.9 1.6zm0 2.8-8.4 8.9 11-6.3zm3.9-4.7-2.9 3.2 2.9 3.2 3.1-1.8a1.6 1.6 0 0 0 0-2.8z"/></svg>
+        Get it on Google Play
+      </a>
+    </div>
+    <p class="disclaimer">Dachwerk does geometry and planning. It is not structural engineering.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="y">2026</span> Uluru Apps · Dachwerk</span>
+    <nav aria-label="Footer">
+      <a href="mailto:uluruapps+dachwerk@gmail.com">Contact</a>
+      <a href="https://uluruapps.github.io/dachwerk-privacy/">Privacy</a>
+      <a href="impressum/">Imprint</a>
+      <a href="de/" hreflang="de" lang="de">Deutsch</a>
+      <a href="llms.txt">llms.txt</a>
+    </nav>
+  </div>
+</footer>
+<script src="main.js" defer></script>
+</body>
+</html>
