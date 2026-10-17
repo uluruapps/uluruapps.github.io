@@ -1,0 +1,43 @@
+# Publishes public/ to GitHub Pages on every push to main.
+# __SITE_URL__ in the files is replaced with the site's address, so canonical links, the sitemap,
+# robots.txt and llms.txt carry absolute URLs. Set a SITE_URL repository variable (e.g.
+# https://dachwerk.app, no trailing slash) once a custom domain is attached.
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fill in the site address and date
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://uluruapps.github.io' }}
+        run: |
+          URL="${SITE_URL%/}"
+          TODAY="$(date -u +%Y-%m-%d)"
+          find public -type f \( -name '*.html' -o -name '*.txt' -o -name '*.xml' \) \
+            -exec sed -i -e "s#__SITE_URL__#${URL}#g" -e "s#__LASTMOD__#${TODAY}#g" {} +
+          if grep -rl "__SITE_URL__\|__LASTMOD__" public; then exit 1; fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - id: deployment
+        uses: actions/deploy-pages@v4
